@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add customer</title>
+    <script src="/Scripts/CustomerFunc.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <a href="../Index.html">Home</a>
+    <div id="add_customer_result" style="color:mediumblue; font-weight: bold"></div>
+    <form id="add_customer" method="post" action="../api/customer/AddCustomer">
+        <fieldset>
+            <legend>Add Customer</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="FirstName">First Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="FirstName" value="" maxlength="256"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="LastName">Last Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="LastName" value="" maxlength="256" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Login">Login:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Login" value="" maxlength="256" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="Password" value="" maxlength="60" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Create" class="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        SetAddEvents();
+    });
+</script>

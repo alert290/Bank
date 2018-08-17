@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Edit customer</title>
+    <script src="/Scripts/CustomerFunc.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <a href="../Index.html">Home</a>
+    <div id="edit_customer_result" style="color:mediumblue; font-weight: bold"></div>
+    <form id="edit_customer" method="post" action="../api/customer/EditCustomer">
+        <fieldset>
+            <legend>Edit Customer</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="hidden" name="CustomerID" id="customer_id" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CustomersList">Customer's login::</label>
+                    </td>
+                    <td>
+                        <select name="CustomersList" id="customers_list" value="" required>
+                            <option value="0">Loading customers list...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="FirstName">First Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="FirstName" id="first_name" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="LastName">Last Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="LastName" id="last_name" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Login">Login:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Login" id="login" value="" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CurrentPassword">Current Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="CurrentPassword" id="current_password" value="" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="NewPassword">New Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="NewPassword" id="new_password" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Update" class="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        SetEditEvents();
+    });
+</script>

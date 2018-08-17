@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Generate transactions</title>
+    <script src="/Scripts/TransactionFunc.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <a href="../Index.html">Home</a>
+    <div id="transactions_result" style="color:mediumblue; font-weight: bold"></div>
+    <form id="generate_transactions" method="post" action="../api/transaction/GenerateCardRandomTransactions">
+        <fieldset>
+            <legend>Generate Transactions For Specific Credit Card</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="CustomersList">Customer's login:</label>
+                    </td>
+                    <td>
+                        <select name="CustomersList" id="customers_list" value="" required>
+                            <option value="0">Loading customers list...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CreditCardsList">Customer's credit cards:</label>
+                    </td>
+                    <td>
+                        <select name="CreditCardList" id="credit_cards_list" value="" required>
+                            <option value="0">Please select customer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Generate" class="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        SetGenTransEvents();
+    });
+</script>

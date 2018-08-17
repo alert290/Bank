@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add credit card</title>
+    <script src="/Scripts/CreditCardFunc.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <a href="../Index.html">Home</a>
+    <div id="add_credit_card_result" style="color:mediumblue; font-weight: bold"></div>
+    <form id="add_credit_card" method="post" action="../api/creditcard/AddCreditCard">
+        <fieldset>
+            <legend>Add Credit Card</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="hidden" name="CustomerID" id="customer_id" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CustomersList">Customer's login:</label>
+                    </td>
+                    <td>
+                        <select name="CustomersList" id="customers_list" value="" required>
+                            <option value="0">Loading customers list...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Amount">Amount</label>
+                    </td>
+                    <td>
+                        <input type="number" name="Amount" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CardNumber">Card Number:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="CardNumber" value="" maxlength="16" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="PIN">PIN:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="PIN" value="" maxlength="4" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Create" class="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        SetCardsAddEvents();
+    });
+</script>

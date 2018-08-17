@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Search for card's transactions</title>
+    <script src="/Scripts/TransactionFunc.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//mugifly.github.io/jquery-simple-datetimepicker/jquery.simple-dtpicker.js"></script>
+    <link rel="stylesheet" href="//mugifly.github.io/jquery-simple-datetimepicker/jquery.simple-dtpicker.css">
+</head>
+<body>
+    <a href="../Index.html">Home</a>
+    <div id="transactions_result" style="color:mediumblue; font-weight: bold"></div>
+    <form id="search_cards_transactions" method="post" action="../api/transaction/GetTransactionsByCard">
+        <fieldset>
+            <legend>Search For Card's Transactions</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="hidden" name="CreditCardID" id="credit_card_id" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CustomersList">Customer's login:</label>
+                    </td>
+                    <td>
+                        <select name="CustomersList" id="customers_list" value="" required>
+                            <option value="0">Loading customers list...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="CreditCardsList">Customer's credit cards:</label>
+                    </td>
+                    <td>
+                        <select name="CreditCardList" id="credit_cards_list" value="" required>
+                            <option value="0">Please select customer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="AmountFrom">Amount from:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="AmountFrom" id="amount_from" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="AmountTo">Amount to:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="AmountTo" id="amount_to" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="DateFrom">Date from:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="DateFrom" id="date_from" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="DateTo">Date to:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="DateTo" id="date_to" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Search" class="submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <table border="1" class="cards-transactions" id="cards_transactions">
+        <tr>
+            <td>Date</td>
+            <td>From creadit card number</td>
+            <td>To credit card number</td>
+            <td>Amount</td>
+            <td>Comment</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $("#date_from").appendDtpicker({
+            "autodateOnStart": false,
+            'locale': 'en'
+        });
+        $("#date_to").appendDtpicker({
+            "autodateOnStart": false,
+            'locale': 'en'
+        });
+        SetSearchTransEvents();
+    });
+</script>

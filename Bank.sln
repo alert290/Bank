@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{D63A7C79-3D21-490F-B779-B57ED3761E36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.DAL", "Bank.DAL\Bank.DAL.csproj", "{C5D359E9-0992-485F-9F17-60DE75F10CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Domain", "Bank.Domain\Bank.Domain.csproj", "{9CD5421F-B256-40C6-B51D-9372A8715C62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D63A7C79-3D21-490F-B779-B57ED3761E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63A7C79-3D21-490F-B779-B57ED3761E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63A7C79-3D21-490F-B779-B57ED3761E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63A7C79-3D21-490F-B779-B57ED3761E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D359E9-0992-485F-9F17-60DE75F10CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D359E9-0992-485F-9F17-60DE75F10CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D359E9-0992-485F-9F17-60DE75F10CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D359E9-0992-485F-9F17-60DE75F10CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD5421F-B256-40C6-B51D-9372A8715C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD5421F-B256-40C6-B51D-9372A8715C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD5421F-B256-40C6-B51D-9372A8715C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD5421F-B256-40C6-B51D-9372A8715C62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7C57067-1FA0-4EC0-B613-748204EE49FB}
+	EndGlobalSection
+EndGlobal
