@@ -31,6 +31,8 @@ namespace Bank.Domain.Services.Concrete
                 return result;
             }
 
+            int counter = 0;
+            var transactionResult = new Result();
             foreach (var card in cards)
             {
                 Random rnd = new Random();
@@ -40,12 +42,25 @@ namespace Bank.Domain.Services.Concrete
                 transaction.Date = DateTime.Now;
                 transaction.FromCreditCardID = card.CreditCardID;
                 transaction.ToCreditCardID = toCardID;
-                await this.PerformTransactionAsync(transaction, repositoriesHandler, resourcesProvider);
+                transactionResult = await this.PerformTransactionAsync(transaction, repositoriesHandler, resourcesProvider);
+                if (transactionResult.Success)
+                {
+                    counter++;
+                }
             }
 
-            result.Success = true; 
-            result.SuccessMessage = resourcesProvider.GetGeneralResource("TransGenDone");
-            return result;
+            if (counter > 0)
+            {
+                result.Success = true;
+                result.SuccessMessage = resourcesProvider.GetGeneralResource("TransGenDone");
+                return result;
+            }
+            else
+            {
+                result.Success = false;
+                result.Error = resourcesProvider.GetGeneralResource("TranAllCCOutOfFunds");
+                return result;
+            }
         }
 
         public async Task<Result> PerformTransactionAsync(Domain.Models.Transaction newTransaction, IRepositoriesHandler repositoriesHandler, IResourcesProvider resourcesProvider)

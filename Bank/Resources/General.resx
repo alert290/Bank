@@ -165,6 +165,9 @@
   <data name="SelectDifCards" xml:space="preserve">
     <value>Please select different credit cards.</value>
   </data>
+  <data name="TranAllCCOutOfFunds" xml:space="preserve">
+    <value>Transactions not possible. Not enough funds on all card accounts.</value>
+  </data>
   <data name="TranFail" xml:space="preserve">
     <value>Transaction failed. Error occurred: </value>
   </data>

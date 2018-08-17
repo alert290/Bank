@@ -205,6 +205,15 @@ namespace Bank.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transactions not possible. Not enough funds on all card accounts..
+        /// </summary>
+        internal static string TranAllCCOutOfFunds {
+            get {
+                return ResourceManager.GetString("TranAllCCOutOfFunds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transaction failed. Error occurred: .
         /// </summary>
         internal static string TranFail {
